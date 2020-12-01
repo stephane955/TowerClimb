@@ -60,9 +60,7 @@ while game_handle.running:
 
     # -------------------
     # TESTS !!!
-
-    game_handle.input_manager.manage_input()
-
+8
     if mode:
         game_handle.render_split_screen(cam2)
 
