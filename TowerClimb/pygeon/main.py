@@ -40,8 +40,6 @@ prev_pressed = False
 
 cam2 = Camera(pygame.Vector2(game_handle.window_width/2, 0), "cam2", True)
 
-game_handle.input_manager.add_key("b", pygame.K_b)
-
 while game_handle.running:
     game_handle.begin()  # Tells the game handle that the game is at the beginning of a new frame
 
@@ -60,8 +58,6 @@ while game_handle.running:
 
     # -------------------
     # TESTS !!!
-
-    game_handle.input_manager.manage_input()
 
     if mode:
         game_handle.render_split_screen(cam2)
@@ -121,8 +117,6 @@ while game_handle.running:
     if not key[pygame.K_m]:
         prev_pressed = False
 
-    if game_handle.input_manager.is_key_pressed_once("b"):
-        print("B is pressed!")
     # ----------------------------
 
     game_handle.update_screen()
