@@ -260,6 +260,8 @@ class PhysicsGameObjectComponent(CollisionGameObjectComponent):
         dynamic : bool
             Set to true if the object will not change its position
             If an GameObject has dynamic and non dynamic colliders the collisions won't work properly!
+        object_height : int
+            The height of this GameObject
         name : str
             The name of the component
         game_object : GameObject
@@ -283,7 +285,7 @@ class PhysicsGameObjectComponent(CollisionGameObjectComponent):
             Performs all the necessary tasks to simulate the required physical effects
         """
 
-    def __init__(self, collider: pygame.Rect, dynamic, name, game_object, active=True):
+    def __init__(self, collider: pygame.Rect, dynamic, object_height: int, name, game_object, active=True):
         """
         Parameters
         ----------
@@ -291,6 +293,8 @@ class PhysicsGameObjectComponent(CollisionGameObjectComponent):
            The rectangular hit box of the component
         dynamic : bool
             Set to true if the object will not change its position
+        object_height : int
+            The height of this GameObject
         name : str
             The name of the component
         game_object : GameObject
@@ -303,6 +307,7 @@ class PhysicsGameObjectComponent(CollisionGameObjectComponent):
 
         self.grounded = False
         self.velocity = pygame.Vector2(0, 0)
+        self.object_height = object_height
 
     def perform_physic(self, game_handle):
         """Performs all the necessary tasks to simulate the required physical effects
@@ -326,4 +331,11 @@ class PhysicsGameObjectComponent(CollisionGameObjectComponent):
         self.velocity = pygame.Vector2(self.velocity.x, 0 if self.velocity.y >= 0 else self.velocity.y)
 
         if self.velocity.y == 0:
+
+            if self.grounded:
+                return
+
+            if self.game_object.position.y + self.object_height > self.collisions[0].game_object.position.y:
+                self.game_object.position.y = self.collisions[0].game_object.position.y - self.object_height
+
             self.grounded = True
