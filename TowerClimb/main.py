@@ -6,12 +6,12 @@ from TowerClimb.core.placeholder.GameObject import GameObject
 from TowerClimb.core.placeholder.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent
 vec = pygame.math.Vector2
 
-
 game_handle = GameHandle("C:/Users/tegui/Downloads/earth-from-space-13.jpg")
 game_handle.asset_manager.create_internal_image(40, 80, RED, "hero")
 game_handle.asset_manager.create_internal_image(game_handle.window_width, 30, GREEN, "ground")
 for plat in Platforms:
     game_handle.asset_manager.create_internal_image(75, 30, BLUE, plat[1])
+
 
 player = GameObject(vec(game_handle.window_width / 2, game_handle.window_height / 2), "hero", True)
 player.add_component(RendererGameObjectComponent("hero", 1, True, "hero", player, True))
