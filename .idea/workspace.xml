@@ -64,6 +64,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -164,5 +165,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1537" height="221" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606980408152" />
+    <state x="141" y="137" key="SettingsEditor" timestamp="1606999210270">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="141" y="137" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1606999210270" />
   </component>
 </project>
