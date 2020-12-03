@@ -1,16 +1,19 @@
 import pygame
 
-from TowerClimb.pygeon.core.GameManager import GameHandle
-from TowerClimb.pygeon.core.misc.Camera import Camera
-from TowerClimb.pygeon.core.misc.GameObject import GameObject
-from TowerClimb.pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent,\
+from pygeon.core.GameManager import GameHandle
+from pygeon.core.GameObjectSaveManager import GameObjectSaveManager
+from pygeon.core.misc.Camera import Camera
+from pygeon.core.misc.GameObject import GameObject
+from pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent, \
     PhysicsGameObjectComponent
+from pygeon.core.misc.GameObjectManager import GameObjectManager
 
 game_handle = GameHandle("C:/Users/malte/Desktop/texture_missing.png")
 
 # Tests
 game_handle.asset_manager.load_image("C:/Users/malte/Desktop/customImage1.png", "a_id")
 game_handle.asset_manager.load_image("C:/Users/malte/Desktop/customImage2.png", "b_id")
+
 a = GameObject(pygame.Vector2(0, 0), "a", True)
 a.add_component(RendererGameObjectComponent("a_id", 0, (1, 1), "renderer", a, True))
 b = GameObject(pygame.Vector2(150, 200), "b", True)
@@ -19,7 +22,7 @@ c = GameObject(pygame.Vector2(0, 150), "c", True)
 c.add_component(RendererGameObjectComponent("b_id", 1, (1, 1), "rendererc", c, True))
 a_dyn = True
 a.add_component(CollisionGameObjectComponent(pygame.Rect(0, 0, 128, 128), a_dyn, "collider", a, True))
-a.add_component(PhysicsGameObjectComponent(pygame.Rect(0, 127, 128, 2), a_dyn, "collider_grav", a, True))
+a.add_component(PhysicsGameObjectComponent(pygame.Rect(0, 127, 128, 2), a_dyn, 128, "collider_grav", a, True))
 #
 c_dyn = True
 c.add_component(CollisionGameObjectComponent(pygame.Rect(0, 0, 1, 128), c_dyn, "left", c, True))
@@ -33,12 +36,22 @@ d = GameObject(pygame.Vector2(0, 590), "d", True)
 d.add_component(CollisionGameObjectComponent(pygame.Rect(0, 0, 800, 10), False, "coll", d, True))
 
 c.add_child(b)
+
+# --- Auch TESTS !!!
+save_mgr = GameObjectSaveManager()
+#save_mgr.save()
+#save_mgr.load()
+a = GameObjectManager().get_object_by_name("a")
+b = GameObjectManager().get_object_by_name("b")
+c = GameObjectManager().get_object_by_name("c")
+d = GameObjectManager().get_object_by_name("d")
 # --- TESTS !!!
 mode = True
 prev_pressed = False
 # ---
 
 cam2 = Camera(pygame.Vector2(game_handle.window_width/2, 0), "cam2", True)
+
 
 while game_handle.running:
     game_handle.begin()  # Tells the game handle that the game is at the beginning of a new frame
@@ -108,7 +121,6 @@ while game_handle.running:
     if key[pygame.K_SPACE]:
         if a.get_component(PhysicsGameObjectComponent)[0].grounded:
             a.get_component(PhysicsGameObjectComponent)[0].velocity.y = -1500
-            a.get_component(PhysicsGameObjectComponent)[0].velocity.x = 600
 
     if key[pygame.K_m] and not prev_pressed:
         mode = not mode
