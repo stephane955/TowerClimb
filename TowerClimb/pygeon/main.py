@@ -86,7 +86,6 @@ cam2 = Camera(pygame.Vector2(game_handle.window_width/2, 0), "cam2", True)
 clock = pygame.time.Clock()
 
 while game_handle.running:
-    clock.tick(60)
     game_handle.begin()  # Tells the game handle that the game is at the beginning of a new frame
 
     for event in pygame.event.get():
