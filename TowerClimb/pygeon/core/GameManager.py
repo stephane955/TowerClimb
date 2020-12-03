@@ -278,7 +278,7 @@ class GameHandle:
         """
 
         pygame.draw.line(pygame.display.get_surface(), (255, 0, 0), (self.window_width / 2 - 1, 0),
-                         (self.window_width / 2 - 1, self.widow_height), 2)
+                         (self.window_width / 2 - 1, self.window_height), 2)
 
         # Left
         if side == 0:
@@ -349,7 +349,7 @@ class GameHandle:
         """Clears a specific side of the screen
         """
 
-        surf = pygame.Surface((self.window_width/2, self.widow_height))
+        surf = pygame.Surface((self.window_width/2, self.window_height))
         surf.fill((0, 0, 0))
         if side == 0:
             self.screen.blit(surf, (0, 0))
