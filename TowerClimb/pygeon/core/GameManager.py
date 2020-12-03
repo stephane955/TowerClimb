@@ -3,7 +3,7 @@ import pygame
 from pygeon.core.AssetManager import AssetManager
 from pygeon.core.misc.Camera import Camera
 from pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent, \
-    PhysicsGameObjectComponent
+    PhysicsGameObjectComponent, ImageAnimationGameObjectComponent
 from pygeon.core.misc.GameObjectManager import GameObjectManager
 
 
@@ -70,6 +70,7 @@ class GameHandle:
     delta_time: float = 0.0
     __last_frame_ticks: float = 0.0
     __last_physics_update: float = 0.0
+    __last_animation_update: float = 0.0
 
     def __init__(self, missing_image_file_path, window_width: int = 800, window_height: int = 600):
         """
@@ -85,12 +86,14 @@ class GameHandle:
 
         self.missing_image_file_path = missing_image_file_path
         self.window_width = window_width
-        self.widow_height = window_height
+        self.window_height = window_height
         self.running = True
         self.RENDER_LAYERS = {0: 'Default Layer 1', 1: 'Default Layer 2', 2: 'Default Layer 3', 3: 'Default Layer 4'}
         self.clear_color = (0, 0, 0)
         self.physics_update_frequency_ticks = 0  # lower value needs more performance #TODO test for good value
-        self.gravity = 98.1 ** 1.75 # 9.81 is too low
+        self.gravity = 98.1 ** 1.75  # 9.81 is too low
+        # This is the fastest speed an animation can have
+        self.animation_speed = 60  # All animation speeds depend on that, they can't be faster than this, only slower
         # Create a camera
         self.camera = Camera(pygame.Vector2(0, 0), "Camera", True)
         # Create the asset manager
@@ -98,7 +101,7 @@ class GameHandle:
         # Init Pygame
         pygame.init()
         # Create the screen
-        self.screen = pygame.display.set_mode((self.window_width, self.widow_height))
+        self.screen = pygame.display.set_mode((self.window_width, self.window_height))
 
     def render(self):
         """Renders all drawable GameObjects considering their layers
@@ -165,6 +168,15 @@ class GameHandle:
 
             for r_component in render_components:
                 r_component.debug_draw_outline(self.camera, (255, 255, 0), 2)
+
+    def animations_tick(self):
+        if pygame.time.get_ticks() < (self.__last_animation_update + self.animation_speed):
+            return
+        self.__last_animation_update = pygame.time.get_ticks()
+
+        for game_object in GameObjectManager().game_objects:
+            if game_object.has_component_of_type(ImageAnimationGameObjectComponent):
+                game_object.get_component(ImageAnimationGameObjectComponent)[0].step_animation()
 
     def physics_update(self):
         """Updates physical things for all relevant GameObjects
@@ -278,7 +290,7 @@ class GameHandle:
         """
 
         pygame.draw.line(pygame.display.get_surface(), (255, 0, 0), (self.window_width / 2 - 1, 0),
-                         (self.window_width / 2 - 1, self.widow_height), 2)
+                         (self.window_width / 2 - 1, self.window_height), 2)
 
         # Left
         if side == 0:
@@ -349,7 +361,7 @@ class GameHandle:
         """Clears a specific side of the screen
         """
 
-        surf = pygame.Surface((self.window_width/2, self.widow_height))
+        surf = pygame.Surface((self.window_width/2, self.window_height))
         surf.fill((0, 0, 0))
         if side == 0:
             self.screen.blit(surf, (0, 0))
