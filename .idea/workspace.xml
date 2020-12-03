@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0774507d-466e-4a81-af42-8e71e5237ac8" name="Default Changelist" comment="" />
+    <list default="true" id="d4bcb5bc-17c0-4bd9-9eb8-c60fa3c42515" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,10 +33,9 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1l42Ou1j3JjyIMUHgknwh34yIRX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1l5zxtgciXdjdMritN84yyb200h" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,30 +44,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.main (1)">
-    <configuration name="GameObjectSaveManager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TowerClimb" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pygeon/core" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pygeon/core/GameObjectSaveManager.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tegui\OneDrive\Dokumente\GitHub\TowerClimb\TowerClimb\game" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TowerClimb" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -77,11 +59,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pygeon" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TowerClimb/pygeon" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pygeon/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TowerClimb/pygeon/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -90,7 +72,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TowerClimb" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -98,11 +80,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TowerClimb" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\tegui\OneDrive\Dokumente\GitHub\TowerClimb\TowerClimb\game\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,19 +95,19 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.GameObjectSaveManager" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0774507d-466e-4a81-af42-8e71e5237ac8" name="Default Changelist" comment="" />
-      <created>1606842014199</created>
+      <changelist id="d4bcb5bc-17c0-4bd9-9eb8-c60fa3c42515" name="Default Changelist" comment="" />
+      <created>1606901989575</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1606842014199</updated>
+      <updated>1606901989575</updated>
     </task>
     <servers />
   </component>
@@ -142,25 +124,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="239" key="GridCell.Tab.0.bottom" timestamp="1606940021167">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1606916810966">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1899" height="239" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606940021167" />
-    <state width="1899" height="239" key="GridCell.Tab.0.center" timestamp="1606940021167">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1606916810966" />
+    <state width="1537" height="221" key="GridCell.Tab.0.bottom" timestamp="1606980408152">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1899" height="239" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606940021167" />
-    <state width="1899" height="239" key="GridCell.Tab.0.left" timestamp="1606940021167">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1537" height="221" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606980408152" />
+    <state width="1537" height="221" key="GridCell.Tab.0.center" timestamp="1606980408152">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1899" height="239" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606940021167" />
-    <state width="1899" height="239" key="GridCell.Tab.0.right" timestamp="1606940021167">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1537" height="221" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606980408152" />
+    <state width="1537" height="221" key="GridCell.Tab.0.left" timestamp="1606980408152">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1899" height="239" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606940021167" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1606847366973">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1537" height="221" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606980408152" />
+    <state width="1537" height="221" key="GridCell.Tab.0.right" timestamp="1606980408152">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606847366973" />
+    <state width="1537" height="221" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606980408152" />
   </component>
 </project>

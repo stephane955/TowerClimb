@@ -1,4 +1,6 @@
-class GameObjectManager(object):  # https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Singleton.html
+# Singleton code based on (link below)
+# https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Singleton.html
+class GameObjectManager(object):
     """A class to keep track of all active GameObjects
 
     ...
@@ -14,6 +16,8 @@ class GameObjectManager(object):  # https://python-3-patterns-idioms-test.readth
     -------
     add_game_object(game_object=GameObject)
         Adds a GameObject to the list
+    def get_current_id()
+        Get the current id
     """
 
     __instance = None
@@ -55,3 +59,20 @@ class GameObjectManager(object):  # https://python-3-patterns-idioms-test.readth
         """
 
         return len(self.game_objects)
+
+    def get_current_id(self):
+        """Get the current id
+
+        Returns
+        -------
+        int
+            The current id
+        """
+
+        return self.__current_game_object_id
+
+    def get_object_by_name(self, name: str):
+        for game_object in self.game_objects:
+            if game_object.name == name:
+                return game_object
+        return None
