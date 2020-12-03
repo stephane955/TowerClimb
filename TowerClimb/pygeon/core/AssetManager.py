@@ -89,3 +89,5 @@ class AssetManager:
         surf = pygame.Surface((width, height))
         surf.fill(color)
         self.__all_images[asset_id] = surf
+
+

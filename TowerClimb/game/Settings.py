@@ -10,5 +10,5 @@ YELLOW = (255, 255, 0)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-Platforms = [[vec(42, 23), "p1", False], [vec(42, 334), "p2", False], [vec(432, 23), "p3", False],
-             [vec(432, 223), "p4", False], [vec(142, 23), "p5", False]]
+Platforms = [[vec(432, 343), "p1", True], [vec(42, 334), "p2", True], [vec(432, 23), "p3", True],
+             [vec(432, 223), "p4", True], [vec(142, 23), "p5", True]]

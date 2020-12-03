@@ -1,6 +1,6 @@
 import pygame
 
-from pygeon.core.misc.GameObject import GameObject
+from TowerClimb.pygeon.core.misc.GameObject import GameObject
 
 
 class Camera(GameObject):

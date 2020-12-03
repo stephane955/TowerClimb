@@ -2,8 +2,8 @@ import math
 
 import pygame
 
-from pygeon.core.misc.GameObjectComponents import GameObjectComponent
-from pygeon.core.misc.GameObjectManager import GameObjectManager
+from TowerClimb.pygeon.core.misc.GameObjectComponents import GameObjectComponent
+from TowerClimb.pygeon.core.misc.GameObjectManager import GameObjectManager
 
 
 class GameObject:

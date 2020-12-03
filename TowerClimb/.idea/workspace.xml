@@ -20,7 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0774507d-466e-4a81-af42-8e71e5237ac8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/Player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/TowerClimb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/TowerClimb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/Settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/AssetManager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/GameManager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/placeholder/Camera.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/placeholder/GameObject.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/placeholder/GameObjectComponents.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/placeholder/GameObjectManager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pygeon/core/AssetManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygeon/core/AssetManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pygeon/core/GameManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygeon/core/GameManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pygeon/core/misc/Camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygeon/core/misc/Camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pygeon/core/misc/GameObject.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygeon/core/misc/GameObject.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pygeon/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygeon/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.main (1)">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -116,6 +132,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="548" y="172" key="FileChooserDialogImpl" timestamp="1606980066040">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="548" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1606980066040" />
     <state width="1899" height="239" key="GridCell.Tab.0.bottom" timestamp="1606900111953">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -132,9 +152,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="239" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606900111953" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1606847366973">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="369" y="124" key="SettingsEditor" timestamp="1606980032458">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="369" y="124" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1606980032458" />
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606847366973" />
   </component>
 </project>

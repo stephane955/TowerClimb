@@ -1,9 +1,9 @@
 import pygame
 
-from pygeon.core.GameManager import GameHandle
-from pygeon.core.misc.Camera import Camera
-from pygeon.core.misc.GameObject import GameObject
-from pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent, \
+from TowerClimb.pygeon.core.GameManager import GameHandle
+from TowerClimb.pygeon.core.misc.Camera import Camera
+from TowerClimb.pygeon.core.misc.GameObject import GameObject
+from TowerClimb.pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent,\
     PhysicsGameObjectComponent
 
 game_handle = GameHandle("C:/Users/malte/Desktop/texture_missing.png")

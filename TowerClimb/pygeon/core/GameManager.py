@@ -1,10 +1,10 @@
 import pygame
 
-from pygeon.core.AssetManager import AssetManager
-from pygeon.core.misc.Camera import Camera
-from pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent, \
+from TowerClimb.pygeon.core.AssetManager import AssetManager
+from TowerClimb.pygeon.core.misc.Camera import Camera
+from TowerClimb.pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent, \
     PhysicsGameObjectComponent
-from pygeon.core.misc.GameObjectManager import GameObjectManager
+from TowerClimb.pygeon.core.misc.GameObjectManager import GameObjectManager
 
 
 class GameHandle:
@@ -85,7 +85,7 @@ class GameHandle:
 
         self.missing_image_file_path = missing_image_file_path
         self.window_width = window_width
-        self.widow_height = window_height
+        self.window_height = window_height
         self.running = True
         self.RENDER_LAYERS = {0: 'Default Layer 1', 1: 'Default Layer 2', 2: 'Default Layer 3', 3: 'Default Layer 4'}
         self.clear_color = (0, 0, 0)
@@ -98,7 +98,7 @@ class GameHandle:
         # Init Pygame
         pygame.init()
         # Create the screen
-        self.screen = pygame.display.set_mode((self.window_width, self.widow_height))
+        self.screen = pygame.display.set_mode((self.window_width, self.window_height))
 
     def render(self):
         """Renders all drawable GameObjects considering their layers
