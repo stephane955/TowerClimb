@@ -6,28 +6,20 @@ from pygeon.core.misc.GameObject import *
 
 class GameObjectSaveManager:
 
-    def load(self):
-        file = open("C:/Users/malte/Desktop/test_save.txt", "rb")
+    def load(self, path):
+        file = open(path, "rb")
 
-        for line in file.readlines():
-            print(type(line))
-            GameObjectManager().game_objects.append(pickle.loads(line))
+        data = pickle.load(file)
+
+        GameObjectManager().game_objects = data
 
         file.close()
 
-    def save(self):
+    def save(self, path):
         current_id = GameObjectManager().get_current_id()
+        save_file = open(path, "wb")
 
-        print(current_id)
+        pickle.dump(GameObjectManager().game_objects, save_file)
 
-        all_objects_data = []
-
-        for game_object in GameObjectManager().game_objects:
-            all_objects_data.append(pickle.dumps(game_object))
-
-        save_file = open("C:/Users/malte/Desktop/test_save.txt", "wb")
-
-        for data in all_objects_data:
-            save_file.write(data)
         save_file.flush()
         save_file.close()

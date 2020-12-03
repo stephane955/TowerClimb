@@ -5,7 +5,7 @@ from pygeon.core.GameObjectSaveManager import GameObjectSaveManager
 from pygeon.core.misc.Camera import Camera
 from pygeon.core.misc.GameObject import GameObject
 from pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent, \
-    PhysicsGameObjectComponent
+    PhysicsGameObjectComponent, ImageAnimationGameObjectComponent
 from pygeon.core.misc.GameObjectManager import GameObjectManager
 
 game_handle = GameHandle("C:/Users/malte/Desktop/texture_missing.png")
@@ -14,6 +14,26 @@ game_handle = GameHandle("C:/Users/malte/Desktop/texture_missing.png")
 game_handle.asset_manager.load_image("C:/Users/malte/Desktop/customImage1.png", "a_id")
 game_handle.asset_manager.load_image("C:/Users/malte/Desktop/customImage2.png", "b_id")
 
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-00.png", "c_0")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-01.png", "c_1")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-02.png", "c_2")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-03.png", "c_3")
+#---
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-2-00.png", "d_0")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-2-01.png", "d_1")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-2-02.png", "d_2")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-2-03.png", "d_3")
+
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-00.png", "f_0")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-01.png", "f_1")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-02.png", "f_2")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-03.png", "f_3")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-04.png", "f_4")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-05.png", "f_5")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-air-attack3-loop-00.png", "f_6")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-air-attack3-loop-01.png", "f_7")
+
+"""
 a = GameObject(pygame.Vector2(0, 0), "a", True)
 a.add_component(RendererGameObjectComponent("a_id", 0, (1, 1), "renderer", a, True))
 b = GameObject(pygame.Vector2(150, 200), "b", True)
@@ -36,15 +56,26 @@ d = GameObject(pygame.Vector2(0, 590), "d", True)
 d.add_component(CollisionGameObjectComponent(pygame.Rect(0, 0, 800, 10), False, "coll", d, True))
 
 c.add_child(b)
+"""
 
 # --- Auch TESTS !!!
 save_mgr = GameObjectSaveManager()
 #save_mgr.save()
-#save_mgr.load()
+save_mgr.load("C:/Users/malte/Desktop/test_save.txt")
 a = GameObjectManager().get_object_by_name("a")
 b = GameObjectManager().get_object_by_name("b")
 c = GameObjectManager().get_object_by_name("c")
 d = GameObjectManager().get_object_by_name("d")
+
+e = GameObject(pygame.Vector2(500, 300), "e", True)
+#e.add_component(RendererGameObjectComponent("b_id", 0, (1, 1), "renderer", e, True))
+e.add_component(ImageAnimationGameObjectComponent(["c_0", "c_1", "c_2", "c_3"], 4, "c_0", 0, (1, 1), "renderer", e, True))
+f = GameObject(pygame.Vector2(500, 500), "f", True)
+f.add_component(ImageAnimationGameObjectComponent(["d_0", "d_1", "d_2", "d_3"], 4, "d_0", 0, (1, 1), "renderer", f, True))
+
+g = GameObject(pygame.Vector2(500, 100), "g", True)
+g.add_component(ImageAnimationGameObjectComponent(["f_0", "f_1", "f_2", "f_3", "f_4", "f_5", "f_6", "f_7"], 4, "g_0", 0, (1, 1), "renderer", g, True))
+
 # --- TESTS !!!
 mode = True
 prev_pressed = False
@@ -52,8 +83,10 @@ prev_pressed = False
 
 cam2 = Camera(pygame.Vector2(game_handle.window_width/2, 0), "cam2", True)
 
+clock = pygame.time.Clock()
 
 while game_handle.running:
+    clock.tick(60)
     game_handle.begin()  # Tells the game handle that the game is at the beginning of a new frame
 
     for event in pygame.event.get():
@@ -65,6 +98,8 @@ while game_handle.running:
     #game_handle.force_physics_update()
 
     game_handle.clear_screen()  # Clear the screen to display changes
+
+    game_handle.animations_tick()
 
     if not mode:  # TESTS !!! (Nur die If)
         game_handle.render()  # Render all objects
