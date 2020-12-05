@@ -4,7 +4,7 @@ import pygame
 from TowerClimb.pygeon.core.AssetManager import AssetManager
 from TowerClimb.pygeon.core.misc.Camera import Camera
 from TowerClimb.pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent, \
-    PhysicsGameObjectComponent
+    PhysicsGameObjectComponent, ImageAnimationGameObjectComponent
 from TowerClimb.pygeon.core.misc.GameObjectManager import GameObjectManager
 
 

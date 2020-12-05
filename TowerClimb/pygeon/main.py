@@ -8,30 +8,30 @@ from pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, C
     PhysicsGameObjectComponent, ImageAnimationGameObjectComponent
 from pygeon.core.misc.GameObjectManager import GameObjectManager
 
-game_handle = GameHandle("C:/Users/malte/Desktop/texture_missing.png")
+game_handle = GameHandle("C:/Users/malte/Desktop/texture_missing.hero")
 
 # Tests
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/customImage1.png", "a_id")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/customImage2.png", "b_id")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/customImage1.hero", "a_id")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/customImage2.hero", "b_id")
 
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-00.png", "c_0")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-01.png", "c_1")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-02.png", "c_2")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-03.png", "c_3")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-00.hero", "c_0")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-01.hero", "c_1")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-02.hero", "c_2")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-03.hero", "c_3")
 #---
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-2-00.png", "d_0")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-2-01.png", "d_1")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-2-02.png", "d_2")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-2-03.png", "d_3")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-2-00.hero", "d_0")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-2-01.hero", "d_1")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-2-02.hero", "d_2")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-idle-2-03.hero", "d_3")
 
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-00.png", "f_0")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-01.png", "f_1")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-02.png", "f_2")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-03.png", "f_3")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-04.png", "f_4")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-05.png", "f_5")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-air-attack3-loop-00.png", "f_6")
-game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-air-attack3-loop-01.png", "f_7")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-00.hero", "f_0")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-01.hero", "f_1")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-02.hero", "f_2")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-03.hero", "f_3")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-04.hero", "f_4")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-attack3-05.hero", "f_5")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-air-attack3-loop-00.hero", "f_6")
+game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-air-attack3-loop-01.hero", "f_7")
 
 """
 a = GameObject(pygame.Vector2(0, 0), "a", True)
