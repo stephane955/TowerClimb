@@ -339,3 +339,26 @@ class PhysicsGameObjectComponent(CollisionGameObjectComponent):
                 self.game_object.position.y = self.collisions[0].game_object.position.y - self.object_height
 
             self.grounded = True
+
+
+class ImageAnimationGameObjectComponent(RendererGameObjectComponent):
+
+    def __init__(self,  animation_image_ids: list, animation_speed: int, image_asset_id: str, render_layer: int, scale: (int, int), name, game_object, active=True):
+        super().__init__(image_asset_id, render_layer, scale, name, game_object, active)
+
+        self.__animation_image_ids = animation_image_ids
+        self.animation_speed = animation_speed
+        self.__animation_pointer = 0
+        self.__speed_counter = 0
+        self.image_asset_id = animation_image_ids[self.__animation_pointer]
+
+    def step_animation(self):
+        self.__speed_counter += 1
+        if self.__speed_counter >= self.animation_speed:
+            self.__speed_counter = 0
+            if self.__animation_pointer == len(self.__animation_image_ids)-1:
+                self.__animation_pointer = 0
+            else:
+                self.__animation_pointer += 1
+
+            self.image_asset_id = self.__animation_image_ids[self.__animation_pointer]

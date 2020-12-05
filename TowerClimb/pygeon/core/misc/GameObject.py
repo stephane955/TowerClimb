@@ -155,3 +155,8 @@ class GameObject:
         for child in self.__children:
             child.translate_movement(x, y)
 
+    def has_component_of_type(self, component_type):
+        for component in self.__component_container:  # Iterate through all components
+            if isinstance(component, component_type):
+                return True
+        return False
