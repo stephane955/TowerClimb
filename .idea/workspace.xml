@@ -19,31 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-
     <list default="true" id="d4bcb5bc-17c0-4bd9-9eb8-c60fa3c42515" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TowerClimb/game/Player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TowerClimb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TowerClimb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/Settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/game/Settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/core/AssetManager.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/core/GameManager.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/core/placeholder/Camera.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/core/placeholder/GameObject.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/core/placeholder/GameObjectComponents.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/core/placeholder/GameObjectManager.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/game/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/pygeon/core/AssetManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/pygeon/core/AssetManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/pygeon/core/GameManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/pygeon/core/GameManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/pygeon/core/misc/Camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/pygeon/core/misc/Camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/pygeon/core/misc/GameObject.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/pygeon/core/misc/GameObject.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/pygeon/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/pygeon/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerClimb/game/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/game/main.py" afterDir="false" />
     </list>
-
-    <list default="true" id="d4bcb5bc-17c0-4bd9-9eb8-c60fa3c42515" name="Default Changelist" comment="" />
-
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,10 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-
-
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -152,35 +128,38 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1606916810966">
+    <state x="637" y="172" key="EnvironmentVariablesDialog" timestamp="1607002029323">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1606916810966" />
-
-    <state width="1259" height="263" key="GridCell.Tab.0.bottom" timestamp="1606999339537">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="637" y="172" key="EnvironmentVariablesDialog/0.0.1536.834@0.0.1536.834" timestamp="1607002029323" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1607001990535">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1607001990535" />
+    <state width="1537" height="221" key="GridCell.Tab.0.bottom" timestamp="1607002494974">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1259" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1606999339537" />
-    <state width="1537" height="221" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606980408152" />
-    <state width="1259" height="263" key="GridCell.Tab.0.center" timestamp="1606999339537">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1537" height="221" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1607002494974" />
+    <state width="1537" height="221" key="GridCell.Tab.0.center" timestamp="1607002494974">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1259" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1606999339537" />
-    <state width="1537" height="221" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606980408152" />
-    <state width="1259" height="263" key="GridCell.Tab.0.left" timestamp="1606999339536">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1537" height="221" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1607002494974" />
+    <state width="1537" height="221" key="GridCell.Tab.0.left" timestamp="1607002494974">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1259" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1606999339536" />
-    <state width="1537" height="221" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606980408152" />
-    <state width="1259" height="263" key="GridCell.Tab.0.right" timestamp="1606999339537">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1537" height="221" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1607002494974" />
+    <state width="1537" height="221" key="GridCell.Tab.0.right" timestamp="1607002494974">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1259" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1606999339537" />
-    <state width="1537" height="221" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606980408152" />
-    <state x="141" y="137" key="SettingsEditor" timestamp="1606999258981">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1537" height="221" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1607002494974" />
+    <state x="169" y="116" key="SettingsEditor" timestamp="1607002242488">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="141" y="137" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1606999258981" />
-
+    <state x="169" y="116" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1607002242488" />
   </component>
 </project>
