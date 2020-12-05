@@ -38,6 +38,7 @@
       <change beforePath="$PROJECT_DIR$/pygeon/core/GameManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygeon/core/GameManager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pygeon/core/misc/Camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygeon/core/misc/Camera.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pygeon/core/misc/GameObject.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygeon/core/misc/GameObject.py" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/pygeon/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygeon/main.py" afterDir="false" />
     </list>
 
