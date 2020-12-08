@@ -43,11 +43,16 @@ for path in run_right:
     path_ids_left.append(asset_id)
     asset_id += "a"
 
+for path in run_left:
+    game_handle.asset_manager.load_image(path, asset_id)
+    path_ids_right.append(asset_id)
+    asset_id += "x"
+
 # Platforms are been drawn
 for plat in Platforms:
     game_handle.asset_manager.create_internal_image(100, 30, GREEN, plat[1])
     platf = GameObject(*plat)
-    platf.add_component(RendererGameObjectComponent(plat[1], 1, (0, 0), "platforms", plat, False))
+    platf.add_component(RendererGameObjectComponent(plat[1], 1, (0, 0), "platforms", plat, True))
     platf.add_component(
         CollisionGameObjectComponent(pygame.Rect(0, 0, 100, -10), False, plat[1] + "t", platf, True))  # top
     platf.add_component(
@@ -60,9 +65,11 @@ for plat in Platforms:
 # Player and components
 # game_handle.asset_manager.create_internal_image(40, 80, RED, "player")
 player = Player(pygame.Vector2(game_handle.window_width / 2, game_handle.window_height / 2), "player", True)
-player.add_component(ImageAnimationGameObjectComponent(path_ids, 1, "anim_idle", 1, (1, 1), "hero", player, False))
+player.add_component(ImageAnimationGameObjectComponent(path_ids, 1, "player", 1, (1, 1), "anim_idle", player, False))
 player.add_component(
-    ImageAnimationGameObjectComponent(path_ids_left, 1, "anim_left", 1, (1, 1), "move_left", player, False))
+    ImageAnimationGameObjectComponent(path_ids_right, 1, "player", 1, (1, 1), "anim_right", player, True))
+player.add_component(
+    ImageAnimationGameObjectComponent(path_ids_left, 1, "anim_left", 1, (1, 1), "anim_left", player, False))
 player.add_component(CollisionGameObjectComponent(pygame.Rect(0, 0, 50, 1), True, "playert", player, True))  # top
 player.add_component(CollisionGameObjectComponent(pygame.Rect(0, 100, 50, 1), True, "playerb", player, True))  # bottom
 player.add_component(CollisionGameObjectComponent(pygame.Rect(0, 0, 1, 100), True, "playerl", player, True))  # left
@@ -109,7 +116,7 @@ while game_handle.running:
     if player.position.y > game_handle.window_height:
         player.position.y = 0
 
-    game_handle.animations_tick()
+    """game_handle.animations_tick()"""
 
     game_handle.physics_update()  # Update all physics (collisions)
 
