@@ -28,6 +28,8 @@ game_handle = GameHandle("C:/Users/tegui/OneDrive/Python/earth.jpg")
 
 asset_id = "i"
 path_ids = []
+path_ids_left = []
+path_ids_right = []
 state = []
 
 #put player's ids in a list
@@ -35,6 +37,11 @@ for path in idle:
     game_handle.asset_manager.load_image(path, asset_id)
     path_ids.append(asset_id)
     asset_id += "i"
+
+for path in run_right:
+    game_handle.asset_manager.load_image(path, asset_id)
+    path_ids_left.append(asset_id)
+    asset_id += "a"
 
 # Platforms are been drawn
 for plat in Platforms:
@@ -53,12 +60,15 @@ for plat in Platforms:
 # Player and components
 # game_handle.asset_manager.create_internal_image(40, 80, RED, "player")
 player = Player(pygame.Vector2(game_handle.window_width / 2, game_handle.window_height / 2), "player", True)
-player.add_component(ImageAnimationGameObjectComponent(path_ids, 2, "player", 1, (1, 1), "hero", player, True))
+player.add_component(ImageAnimationGameObjectComponent(path_ids, 1, "anim_idle", 1, (1, 1), "hero", player, False))
+player.add_component(
+    ImageAnimationGameObjectComponent(path_ids_left, 1, "anim_left", 1, (1, 1), "move_left", player, False))
 player.add_component(CollisionGameObjectComponent(pygame.Rect(0, 0, 50, 1), True, "playert", player, True))  # top
 player.add_component(CollisionGameObjectComponent(pygame.Rect(0, 100, 50, 1), True, "playerb", player, True))  # bottom
 player.add_component(CollisionGameObjectComponent(pygame.Rect(0, 0, 1, 100), True, "playerl", player, True))  # left
 player.add_component(CollisionGameObjectComponent(pygame.Rect(50, 0, 1, 100), True, "playerr", player, True))  # right
 player.add_component(PhysicsGameObjectComponent(pygame.Rect(0, 100, 35, 1), True, 80, "playerphysics", player, True))
+
 
 # Ground and components
 game_handle.asset_manager.create_internal_image(game_handle.window_width, 30, GREEN, "ground")
@@ -87,6 +97,9 @@ while game_handle.running:
     if keys[pygame.K_SPACE]:
         if player.get_component_by_name("playerphysics").grounded:
             player.get_component_by_name("playerphysics").velocity.y -= 300
+    """if not player.get_component_by_name("playert").has_no_collisions():
+        player.position.y = player.get_component_by_name("playert").collisions[0].position.y"""
+
 
     if player.position.x < 0:
         player.position.x = game_handle.window_width

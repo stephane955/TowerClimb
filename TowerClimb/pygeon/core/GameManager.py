@@ -348,14 +348,15 @@ class GameHandle:
 
                     render_components = game_object.get_component(RendererGameObjectComponent)
 
+                    if not render_components.active:
+                        continue
                     for r_component in render_components:
                         if r_component.render_layer == current_layer:
-
-                            self.screen.blit(self.asset_manager.get_image(r_component.image_asset_id),
-                                             (
-                                                 game_object.get_x() + int(
-                                                     self.window_width / 2) - camera.get_x(),
-                                                 game_object.get_y() - camera.get_y()))
+                                self.screen.blit(self.asset_manager.get_image(r_component.image_asset_id),
+                                                 (
+                                                     game_object.get_x() + int(
+                                                         self.window_width / 2) - camera.get_x(),
+                                                     game_object.get_y() - camera.get_y()))
                 current_layer += 1
 
     def __clear_screen_split(self, side):

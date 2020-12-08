@@ -22,57 +22,8 @@
     <list default="true" id="d4bcb5bc-17c0-4bd9-9eb8-c60fa3c42515" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TowerClimb/game/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/game/Player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/Settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/game/Settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/main-DimitrisLenovo.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/game/main-DimitrisLenovo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TowerClimb/game/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/game/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (10).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (11).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (12).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (13).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (14).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (15).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (16).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (4).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (5).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (6).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (7).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (8).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Idle (9).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (10).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (11).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (12).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (13).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (4).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (5).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (6).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (7).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (8).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/papi/Walk (9).png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/TowerClimb/pygeon/core/GameManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/pygeon/core/GameManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/pygeon/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/pygeon/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pip/_vendor/html5lib/filters/sanitizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pip/_vendor/html5lib/filters/sanitizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/arraydemo.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/arraydemo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/dropevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/dropevent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/font_viewer.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/font_viewer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/headless_no_windows_needed.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/headless_no_windows_needed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/midi.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/midi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/scrap_clipboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/scrap_clipboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/testsprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/testsprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/video.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/examples/video.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/freetype_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/freetype_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/image__save_gl_surface_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/image__save_gl_surface_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/image_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/image_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/imageext_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/imageext_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/mixer_music_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/mixer_music_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/surface_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/surface_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/test_utils/png.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/test_utils/png.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/transform_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/venv/Lib/site-packages/pygame/tests/transform_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
