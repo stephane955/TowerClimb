@@ -70,6 +70,7 @@ while game_handle.running:
     if keys[pygame.K_SPACE]:
         if player.get_component_by_name("playerphysics").grounded:
             player.get_component_by_name("playerphysics").velocity.y -= 300
+    player.get_component_by_name("playert").collisions[0].position.y
 
     if player.position.x < 0:
         player.position.x = game_handle.window_width
