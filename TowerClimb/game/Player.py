@@ -45,7 +45,6 @@ class Player(GameObject):
             self.vel.x = 0
         if not self.get_component_by_name("player_physics_right").has_no_collisions() and not keys[left]:
             self.vel.x = 0
-
         if self.vel.x >= 0:
             self.vel.x += self.vel.x * -0.002
         elif self.vel.x <= 0:

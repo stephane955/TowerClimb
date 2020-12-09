@@ -75,7 +75,7 @@ for plat in Platforms:
     platf = GameObject(*plat)
     platf.add_component(RendererGameObjectComponent(plat[1], 1, (0, 0), "platforms", plat, True))
     platf.add_component(
-        CollisionGameObjectComponent(pygame.Rect(0, 0, 100, -10), False, plat[1] + "t", platf, True))  # top
+        CollisionGameObjectComponent(pygame.Rect(0, 0, 100, -5), False, plat[1] + "t", platf, True))  # top
     platf.add_component(
         CollisionGameObjectComponent(pygame.Rect(0, 30, 100, 1), False, plat[1] + "b", platf, True))  # bottom
     platf.add_component(
@@ -84,8 +84,8 @@ for plat in Platforms:
         CollisionGameObjectComponent(pygame.Rect(100, 0, 1, 30), False, plat[1] + "r", platf, True))  # right
 
 # Player and components
-# game_handle.asset_manager.create_internal_image(40, 80, RED, "player")
-player = Player(pygame.Vector2(game_handle.window_width / 2, game_handle.window_height / 2), "player", True)
+
+player = Player(pygame.Vector2(game_handle.window_width / 2 - 50, game_handle.window_height / 2 - 100), "player", True)
 player.add_component(
     ImageAnimationGameObjectComponent(dict_all_paths, "idle_right", 1, "player", 1, (1, 1), "anim_idle", player, True))
 player.add_component(
@@ -95,22 +95,24 @@ player.add_component(
     CollisionGameObjectComponent(pygame.Rect(-10, -20, 12, 120), True, "player_l", player, True))  # left
 player.add_component(
     CollisionGameObjectComponent(pygame.Rect(40, -20, 12, 120), True, "player_r", player, True))  # right
-player.add_component(PhysicsGameObjectComponent(pygame.Rect(0, 100, 50, 1), True, 80, "player_physics_bottom", player,
-                                                True))  # component for gravity
+
 # player physics components
+player.add_component(PhysicsGameObjectComponent(pygame.Rect(-12, 100, 62, 1), True, 80, "player_physics_bottom", player,
+                                                True))  # component for gravity
 player.add_component(
     PhysicsGameObjectComponent(pygame.Rect(-10, -10, 60, -10), True, 80, "player_physics_top", player, True))  # top
 player.add_component(
-    PhysicsGameObjectComponent(pygame.Rect(-10, -20, 12, 115), True, 80, "player_physics_left", player, True))  # left
-player.add_component(
     PhysicsGameObjectComponent(pygame.Rect(40, -20, 12, 115), True, 80, "player_physics_right", player, True))  # right
+player.add_component(
+    PhysicsGameObjectComponent(pygame.Rect(-14, -20, 15, 115), True, 80, "player_physics_left", player, True))  # left
+
 
 # Ground and components
 game_handle.asset_manager.create_internal_image(game_handle.window_width, 30, GREEN, "ground")
 ground = GameObject(vec(0, game_handle.window_height - 30), "ground", True)
 ground.add_component(RendererGameObjectComponent("ground", 1, (0, 0), "hero", ground, True))
 ground.add_component(
-    CollisionGameObjectComponent(pygame.Rect(0, 0, game_handle.window_width, -10), False, "groundcomp", ground, True))
+    CollisionGameObjectComponent(pygame.Rect(0, 0, game_handle.window_width, -5), False, "groundcomp", ground, True))
 
 while game_handle.running:
     game_handle.begin()  # Tells the game handle that the game is at the beginning of a new frame
@@ -137,14 +139,6 @@ while game_handle.running:
     if not player.get_component_by_name("player_physics_top").has_no_collisions():
         player.get_component_by_name("player_physics_bottom").velocity.y = 120
 
-    # check if player collides with anything on the left
-    if not player.get_component_by_name("player_physics_left").has_no_collisions():
-        player.get_component_by_name("player_physics_bottom").velocity.x = 0
-
-    # check if player collides with anything on the right
-    if not player.get_component_by_name("player_physics_right").has_no_collisions():
-        player.get_component_by_name("player_physics_bottom").velocity.x = 0
-
     game_handle.animations_tick()
 
     game_handle.physics_update()  # Update all physics (collisions)
@@ -155,7 +149,7 @@ while game_handle.running:
 
     # Debug
     # if draw_debug:
-    game_handle.debug_draw_collider_outlines()
+    # game_handle.debug_draw_collider_outlines()
 
     game_handle.update_screen()
 
