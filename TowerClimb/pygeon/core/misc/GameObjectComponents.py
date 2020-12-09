@@ -341,6 +341,7 @@ class PhysicsGameObjectComponent(CollisionGameObjectComponent):
             self.grounded = True
 
 
+
 class ImageAnimationGameObjectComponent(RendererGameObjectComponent):
 
     def __init__(self, animation_image_ids: dict, current_animation_id: str, animation_speed: int, image_asset_id: str, render_layer: int,

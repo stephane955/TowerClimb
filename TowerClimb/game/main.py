@@ -1,17 +1,22 @@
 from TowerClimb.game.Player import Player
 from TowerClimb.pygeon.core.GameManager import GameHandle
 from TowerClimb.pygeon.core.misc.GameObject import GameObject
-from TowerClimb.pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent,\
+from TowerClimb.pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent, \
     PhysicsGameObjectComponent, ImageAnimationGameObjectComponent
 from TowerClimb.game.Settings import *
 import keyboard
 
 # storing paths for my character images
-path = "C:/Users/tegui/OneDrive/Dokumente/GitHub Desktop/TowerClimb/TowerClimb/game/adventurer/"
-path2 = "C:/Users/tegui/OneDrive/Dokumente/GitHub Desktop/TowerClimb/TowerClimb/game/adventurer/run_left/"
-idle = [path + "Idle__000.png", path + "Idle__001.png", path + "Idle__002.png", path + "Idle__003.png",
-        path + "Idle__004.png", path + "Idle__005.png", path + "Idle__006.png",
-        path + "Idle__007.png", path + "Idle__008.png", path + "idle__009.png"]
+path = "C:/Users/tegui/OneDrive/Dokumente/GitHub/TowerClimb/TowerClimb/game/adventurer_new_sizes/"
+path2 = "C:/Users/tegui/OneDrive/Dokumente/GitHub/TowerClimb/TowerClimb/game/adventurer_new_sizes/run_left/"
+path3 = "C:/Users/tegui/OneDrive/Dokumente/GitHub/TowerClimb/TowerClimb/game/adventurer_new_sizes/idle_left/"
+
+idle_right = [path + "Idle__000.png", path + "Idle__001.png", path + "Idle__002.png", path + "Idle__003.png",
+              path + "Idle__004.png", path + "Idle__005.png", path + "Idle__006.png",
+              path + "Idle__007.png", path + "Idle__008.png", path + "idle__009.png"]
+idle_left = [path3 + "Idle__000.png", path3 + "Idle__001.png", path3 + "Idle__002.png", path3 + "Idle__003.png",
+             path3 + "Idle__004.png", path3 + "Idle__005.png", path3 + "Idle__006.png",
+             path3 + "Idle__007.png", path3 + "Idle__008.png", path3 + "idle__009.png"]
 jump = [path + "Jump__000.png", path + "Jump__001.png", path + "Jump__002.png", path + "Jump__003.png",
         path + "Jump__004.png", path + "Jump__005.png", path + "Jump__006.png",
         path + "Jump__007.png", path + "Jump__008.png", path + "Jump__009.png"]
@@ -19,34 +24,50 @@ run_right = [path + "run__000.png", path + "run__001.png", path + "run__002.png"
              path + "run__004.png", path + "run__005.png", path + "run__006.png",
              path + "run__007.png", path + "run__008.png", path + "run__009.png"]
 run_left = [path2 + "Run__000.png", path2 + "Run__001.png", path2 + "Run__002.png", path2 + "run__003.png",
-             path2 + "Run__004.png", path2 + "Run__005.png", path2 + "Run__006.png",
-             path2 + "Run__007.png", path2 + "Run__008.png", path2 + "Run__009.png"]
+            path2 + "Run__004.png", path2 + "Run__005.png", path2 + "Run__006.png",
+            path2 + "Run__007.png", path2 + "Run__008.png", path2 + "Run__009.png"]
 
-#create an instance of the game manager
+# create an instance of the game manager
 game_handle = GameHandle("C:/Users/tegui/OneDrive/Python/earth.jpg")
 
-
+# set abitrary ids for the loaded images
 asset_id = "i"
-path_ids = []
+asset_id_left = "l"
+asset_id_right = "r"
+
+# list for storing the paths and image's ids
+path_ids_idle_right = []
 path_ids_left = []
 path_ids_right = []
-state = []
+path_ids_idle_left = []
+dict_all_paths = {}
 
-#put player's ids in a list
-for path in idle:
+# different images from the player will are been loaded
+for path in idle_right:
     game_handle.asset_manager.load_image(path, asset_id)
-    path_ids.append(asset_id)
+    path_ids_idle_right.append(asset_id)
     asset_id += "i"
 
 for path in run_right:
     game_handle.asset_manager.load_image(path, asset_id)
-    path_ids_left.append(asset_id)
+    path_ids_right.append(asset_id)
     asset_id += "a"
 
 for path in run_left:
     game_handle.asset_manager.load_image(path, asset_id)
-    path_ids_right.append(asset_id)
+    path_ids_left.append(asset_id)
     asset_id += "x"
+
+for path in idle_left:
+    game_handle.asset_manager.load_image(path, asset_id)
+    path_ids_idle_left.append(asset_id)
+    asset_id += "p"
+
+# loaded images are been stored in a dictionary. It will be needed to render animation.
+dict_all_paths["idle_right"] = path_ids_idle_right
+dict_all_paths["run_right"] = path_ids_right
+dict_all_paths["run_left"] = path_ids_left
+dict_all_paths["idle_left"] = path_ids_idle_left
 
 # Platforms are been drawn
 for plat in Platforms:
@@ -65,17 +86,24 @@ for plat in Platforms:
 # Player and components
 # game_handle.asset_manager.create_internal_image(40, 80, RED, "player")
 player = Player(pygame.Vector2(game_handle.window_width / 2, game_handle.window_height / 2), "player", True)
-player.add_component(ImageAnimationGameObjectComponent(path_ids, 1, "player", 1, (1, 1), "anim_idle", player, True))
 player.add_component(
-    ImageAnimationGameObjectComponent(path_ids_right, 1, "player", 1, (1, 1), "anim_right", player, True))
+    ImageAnimationGameObjectComponent(dict_all_paths, "idle_right", 1, "player", 1, (1, 1), "anim_idle", player, True))
 player.add_component(
-    ImageAnimationGameObjectComponent(path_ids_left, 1, "anim_left", 1, (1, 1), "anim_left", player, False))
-player.add_component(CollisionGameObjectComponent(pygame.Rect(0, 0, 50, 1), True, "playert", player, True))  # top
-player.add_component(CollisionGameObjectComponent(pygame.Rect(0, 100, 50, 1), True, "playerb", player, True))  # bottom
-player.add_component(CollisionGameObjectComponent(pygame.Rect(0, 0, 1, 100), True, "playerl", player, True))  # left
-player.add_component(CollisionGameObjectComponent(pygame.Rect(50, 0, 1, 100), True, "playerr", player, True))  # right
-player.add_component(PhysicsGameObjectComponent(pygame.Rect(0, 100, 35, 1), True, 80, "playerphysics", player, True))
-
+    CollisionGameObjectComponent(pygame.Rect(-10, -10, 60, -10), True, "player_t", player, True))  # top
+player.add_component(CollisionGameObjectComponent(pygame.Rect(0, 100, 50, 1), True, "player_b", player, True))  # bottom
+player.add_component(
+    CollisionGameObjectComponent(pygame.Rect(-10, -20, 12, 120), True, "player_l", player, True))  # left
+player.add_component(
+    CollisionGameObjectComponent(pygame.Rect(40, -20, 12, 120), True, "player_r", player, True))  # right
+player.add_component(PhysicsGameObjectComponent(pygame.Rect(0, 100, 50, 1), True, 80, "player_physics_bottom", player,
+                                                True))  # component for gravity
+# player physics components
+player.add_component(
+    PhysicsGameObjectComponent(pygame.Rect(-10, -10, 60, -10), True, 80, "player_physics_top", player, True))  # top
+player.add_component(
+    PhysicsGameObjectComponent(pygame.Rect(-10, -20, 12, 115), True, 80, "player_physics_left", player, True))  # left
+player.add_component(
+    PhysicsGameObjectComponent(pygame.Rect(40, -20, 12, 115), True, 80, "player_physics_right", player, True))  # right
 
 # Ground and components
 game_handle.asset_manager.create_internal_image(game_handle.window_width, 30, GREEN, "ground")
@@ -102,25 +130,22 @@ while game_handle.running:
         game_handle.camera.position = pygame.Vector2(0, 0)
 
     if keys[pygame.K_SPACE]:
-        if player.get_component_by_name("playerphysics").grounded:
-            player.get_component_by_name("playerphysics").velocity.y -= 300
+        if player.get_component_by_name("player_physics_bottom").grounded:
+            player.get_component_by_name("player_physics_bottom").velocity.y -= 300
 
-    """player.get_component_by_name("playert").collisions[0].position.y"""
+    # check if player collides with anything on the top
+    if not player.get_component_by_name("player_physics_top").has_no_collisions():
+        player.get_component_by_name("player_physics_bottom").velocity.y = 120
 
-    """if not player.get_component_by_name("playert").has_no_collisions():
-        player.position.y = player.get_component_by_name("playert").collisions[0].position.y"""
+    # check if player collides with anything on the left
+    if not player.get_component_by_name("player_physics_left").has_no_collisions():
+        player.get_component_by_name("player_physics_bottom").velocity.x = 0
 
+    # check if player collides with anything on the right
+    if not player.get_component_by_name("player_physics_right").has_no_collisions():
+        player.get_component_by_name("player_physics_bottom").velocity.x = 0
 
-
-    if player.position.x < 0:
-        player.position.x = game_handle.window_width
-    if player.position.x > game_handle.window_width:
-        player.position.x = 0
-
-    if player.position.y > game_handle.window_height:
-        player.position.y = 0
-
-    """game_handle.animations_tick()"""
+    game_handle.animations_tick()
 
     game_handle.physics_update()  # Update all physics (collisions)
 
