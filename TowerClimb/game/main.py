@@ -65,7 +65,7 @@ for plat in Platforms:
 # Player and components
 # game_handle.asset_manager.create_internal_image(40, 80, RED, "player")
 player = Player(pygame.Vector2(game_handle.window_width / 2, game_handle.window_height / 2), "player", True)
-player.add_component(ImageAnimationGameObjectComponent(path_ids, 1, "player", 1, (1, 1), "anim_idle", player, False))
+player.add_component(ImageAnimationGameObjectComponent(path_ids, 1, "player", 1, (1, 1), "anim_idle", player, True))
 player.add_component(
     ImageAnimationGameObjectComponent(path_ids_right, 1, "player", 1, (1, 1), "anim_right", player, True))
 player.add_component(
@@ -105,7 +105,7 @@ while game_handle.running:
         if player.get_component_by_name("playerphysics").grounded:
             player.get_component_by_name("playerphysics").velocity.y -= 300
 
-    player.get_component_by_name("playert").collisions[0].position.y
+    """player.get_component_by_name("playert").collisions[0].position.y"""
 
     """if not player.get_component_by_name("playert").has_no_collisions():
         player.position.y = player.get_component_by_name("playert").collisions[0].position.y"""
