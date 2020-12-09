@@ -10,9 +10,11 @@ class Player(GameObject):
 
     def controls(self, left, right, game_handle):
         keys = pygame.key.get_pressed()
-        if keys[left]:
+        if keys[left] and self.position.x > 0:
             self.vel.x += - 1 * game_handle.delta_time
-        if keys[right]:
+            """self.get_component_by_name("anim_left").active = True
+            self.get_component_by_name("anim_idle").active = False"""
+        if keys[right] and self.position.x < game_handle.window_width + 80:
             self.vel.x += 1 * game_handle.delta_time
 
         self.translate_movement(self.vel.x, self.vel.y)

@@ -4,7 +4,7 @@ import pygame
 from TowerClimb.pygeon.core.AssetManager import AssetManager
 from TowerClimb.pygeon.core.misc.Camera import Camera
 from TowerClimb.pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent, \
-    PhysicsGameObjectComponent
+    PhysicsGameObjectComponent, ImageAnimationGameObjectComponent
 from TowerClimb.pygeon.core.misc.GameObjectManager import GameObjectManager
 
 
@@ -126,6 +126,8 @@ class GameHandle:
                 for r_component in render_components:
                     if r_component.render_layer == current_layer:  # Only draw if the layer is correct
                         # Draw everything relative to the current camera position
+                        if not game_object.get_component(RendererGameObjectComponent)[0].active:
+                            continue
                         self.screen.blit(self.asset_manager.get_image(r_component.image_asset_id),
                                          (game_object.get_x() - self.camera.get_x(),
                                           game_object.get_y() - self.camera.get_y()))
@@ -177,6 +179,8 @@ class GameHandle:
 
         for game_object in GameObjectManager().game_objects:
             if game_object.has_component_of_type(ImageAnimationGameObjectComponent):
+                if not game_object.get_component(ImageAnimationGameObjectComponent)[0].active:
+                    continue
                 game_object.get_component(ImageAnimationGameObjectComponent)[0].step_animation()
 
     def physics_update(self):
@@ -350,12 +354,11 @@ class GameHandle:
 
                     for r_component in render_components:
                         if r_component.render_layer == current_layer:
-
-                            self.screen.blit(self.asset_manager.get_image(r_component.image_asset_id),
-                                             (
-                                                 game_object.get_x() + int(
-                                                     self.window_width / 2) - camera.get_x(),
-                                                 game_object.get_y() - camera.get_y()))
+                                self.screen.blit(self.asset_manager.get_image(r_component.image_asset_id),
+                                                 (
+                                                     game_object.get_x() + int(
+                                                         self.window_width / 2) - camera.get_x(),
+                                                     game_object.get_y() - camera.get_y()))
                 current_layer += 1
 
     def __clear_screen_split(self, side):

@@ -6,14 +6,14 @@ from TowerClimb.pygeon.core.misc.GameObjectComponents import RendererGameObjectC
 from TowerClimb.game.Settings import *
 
 path = "C:/Users/tegui/OneDrive/Dokumente/GitHub/TowerClimb/TowerClimb/game"
-Idle = [path+"/papi/Idle (1).png", path+"/papi/Idle (2).png",
-            path+"/papi/Idle (3).png", path+"/papi/Idle (4).png",
-            path+"/papi/Idle (5).png", path+"/papi/Idle (6).png",
-            path+"/papi/Idle (7).png", path+"/papi/Idle (8).png",
-            path+"/papi/Idle (9).png", path+"/papi/Idle (10).png",
-            path+"/papi/Idle (11).png", path+"/papi/Idle (12).png",
-            path+"/papi/Idle (13).png", path+"/papi/Idle (14).png",
-            path+"/papi/Idle (15).png", path+"/papi/Idle (16).png"]
+Idle = [path+"/papi/Idle (1).hero", path+"/papi/Idle (2).hero",
+            path+"/papi/Idle (3).hero", path+"/papi/Idle (4).hero",
+            path+"/papi/Idle (5).hero", path+"/papi/Idle (6).hero",
+            path+"/papi/Idle (7).hero", path+"/papi/Idle (8).hero",
+            path+"/papi/Idle (9).hero", path+"/papi/Idle (10).hero",
+            path+"/papi/Idle (11).hero", path+"/papi/Idle (12).hero",
+            path+"/papi/Idle (13).hero", path+"/papi/Idle (14).hero",
+            path+"/papi/Idle (15).hero", path+"/papi/Idle (16).hero"]
 
 game_handle = GameHandle("C:/Users/tegui/Downloads/earth-from-space-13.jpg")
 
