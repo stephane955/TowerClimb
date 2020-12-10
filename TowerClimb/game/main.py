@@ -10,6 +10,7 @@ import keyboard
 path = "C:/Users/tegui/OneDrive/Dokumente/GitHub/TowerClimb/TowerClimb/game/adventurer_new_sizes/"
 path2 = "C:/Users/tegui/OneDrive/Dokumente/GitHub/TowerClimb/TowerClimb/game/adventurer_new_sizes/run_left/"
 path3 = "C:/Users/tegui/OneDrive/Dokumente/GitHub/TowerClimb/TowerClimb/game/adventurer_new_sizes/idle_left/"
+path4 = "C:/Users/tegui/OneDrive/Dokumente/GitHub/TowerClimb/TowerClimb/game/adventurer_new_sizes/jump_left/"
 
 idle_right = [path + "Idle__000.png", path + "Idle__001.png", path + "Idle__002.png", path + "Idle__003.png",
               path + "Idle__004.png", path + "Idle__005.png", path + "Idle__006.png",
@@ -26,6 +27,10 @@ run_right = [path + "run__000.png", path + "run__001.png", path + "run__002.png"
 run_left = [path2 + "Run__000.png", path2 + "Run__001.png", path2 + "Run__002.png", path2 + "run__003.png",
             path2 + "Run__004.png", path2 + "Run__005.png", path2 + "Run__006.png",
             path2 + "Run__007.png", path2 + "Run__008.png", path2 + "Run__009.png"]
+
+jump_right = []
+
+jump_left = []
 
 # create an instance of the game manager
 game_handle = GameHandle("C:/Users/tegui/OneDrive/Python/earth.jpg")
@@ -112,7 +117,7 @@ game_handle.asset_manager.create_internal_image(game_handle.window_width, 30, GR
 ground = GameObject(vec(0, game_handle.window_height - 30), "ground", True)
 ground.add_component(RendererGameObjectComponent("ground", 1, (0, 0), "hero", ground, True))
 ground.add_component(
-    CollisionGameObjectComponent(pygame.Rect(0, 0, game_handle.window_width, -5), False, "groundcomp", ground, True))
+    CollisionGameObjectComponent(pygame.Rect(0, 0, game_handle.window_width, -10), False, "groundcomp", ground, True))
 
 while game_handle.running:
     game_handle.begin()  # Tells the game handle that the game is at the beginning of a new frame
