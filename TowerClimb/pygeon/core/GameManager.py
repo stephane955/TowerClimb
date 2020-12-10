@@ -1,3 +1,6 @@
+import asyncio
+import threading
+
 import pygame
 
 from pygeon.core.AssetManager import AssetManager
@@ -5,6 +8,7 @@ from pygeon.core.misc.Camera import Camera
 from pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent, \
     PhysicsGameObjectComponent, ImageAnimationGameObjectComponent
 from pygeon.core.misc.GameObjectManager import GameObjectManager
+from pygeon.core.networking.NetworkManager import MultiplayerManager
 
 
 class GameHandle:
@@ -89,7 +93,7 @@ class GameHandle:
         self.window_height = window_height
         self.running = True
         self.RENDER_LAYERS = {0: 'Default Layer 1', 1: 'Default Layer 2', 2: 'Default Layer 3', 3: 'Default Layer 4'}
-        self.clear_color = (0, 0, 0)
+        self.clear_color = (255, 255, 255)
         self.physics_update_frequency_ticks = 0  # lower value needs more performance #TODO test for good value
         self.gravity = 98.1 ** 1.75  # 9.81 is too low
         # This is the fastest speed an animation can have
@@ -98,6 +102,8 @@ class GameHandle:
         self.camera = Camera(pygame.Vector2(0, 0), "Camera", True)
         # Create the asset manager
         self.asset_manager = AssetManager(pygame.image.load(missing_image_file_path))
+        #
+        self.multiplayer_manager = MultiplayerManager()
         # Init Pygame
         pygame.init()
         # Create the screen
@@ -172,10 +178,13 @@ class GameHandle:
     def animations_tick(self):
         if pygame.time.get_ticks() < (self.__last_animation_update + self.animation_speed):
             return
+
         self.__last_animation_update = pygame.time.get_ticks()
 
         for game_object in GameObjectManager().game_objects:
             if game_object.has_component_of_type(ImageAnimationGameObjectComponent):
+                if not game_object.get_component(ImageAnimationGameObjectComponent)[0].active:
+                    continue
                 game_object.get_component(ImageAnimationGameObjectComponent)[0].step_animation()
 
     def physics_update(self):
@@ -268,8 +277,8 @@ class GameHandle:
         bool
             Whether the GameObject is overlapping the split screen or not
         """
-        
-        middle_line = int(camera.get_x() + self.window_width/2)
+
+        middle_line = int(camera.get_x() + self.window_width / 2)
         if side == 0:
             if width + x > middle_line:
                 return True
@@ -278,7 +287,7 @@ class GameHandle:
                 return True
         return False
 
-    def __render_intern_split_screen(self, side: int, camera : Camera):
+    def __render_intern_split_screen(self, side: int, camera: Camera):
         """Renders one side of the split screen
 
         Parameters
@@ -308,13 +317,14 @@ class GameHandle:
 
                     for r_component in render_components:
                         if r_component.render_layer == current_layer:
-                            #---
+                            # ---
                             image_width = self.asset_manager.get_image(r_component.image_asset_id).get_width()
                             image_height = self.asset_manager.get_image(r_component.image_asset_id).get_height()
                             middle_line = int(camera.get_x() + self.window_width / 2)
                             image_orig = self.asset_manager.get_image(r_component.image_asset_id)
                             if self.__overlapping_split_screen(game_object.get_x(), image_width, 0, camera):
-                                if image_width - (image_width - middle_line) - game_object.get_x() <= 0:  # Nichts mehr auf sichtbarer Seite übrig
+                                if image_width - (
+                                        image_width - middle_line) - game_object.get_x() <= 0:  # Nichts mehr auf sichtbarer Seite übrig
                                     continue
                                 image_new = pygame.Surface(
                                     (image_width - (image_width - middle_line) - game_object.get_x(), image_height))
@@ -329,9 +339,9 @@ class GameHandle:
 
                             else:
                                 self.screen.blit(self.asset_manager.get_image(r_component.image_asset_id),
-                                                (game_object.get_x() - camera.get_x(),
-                                                game_object.get_y() - camera.get_y()))
-                            #---
+                                                 (game_object.get_x() - camera.get_x(),
+                                                  game_object.get_y() - camera.get_y()))
+                            # ---
 
                 current_layer += 1  # Increase the layer which is currently drawn
         else:  # Right
@@ -349,7 +359,6 @@ class GameHandle:
 
                     for r_component in render_components:
                         if r_component.render_layer == current_layer:
-
                             self.screen.blit(self.asset_manager.get_image(r_component.image_asset_id),
                                              (
                                                  game_object.get_x() + int(
@@ -361,12 +370,12 @@ class GameHandle:
         """Clears a specific side of the screen
         """
 
-        surf = pygame.Surface((self.window_width/2, self.window_height))
-        surf.fill((0, 0, 0))
+        surf = pygame.Surface((self.window_width / 2, self.window_height))
+        surf.fill(self.clear_color)
         if side == 0:
             self.screen.blit(surf, (0, 0))
         else:
-            self.screen.blit(surf, (self.window_width/2, 0))
+            self.screen.blit(surf, (self.window_width / 2, 0))
 
     def render_split_screen(self, camera_other=None):
         """Runs all necessary methods to render in split screen

@@ -181,6 +181,9 @@ class CollisionGameObjectComponent(GameObjectComponent):
                     Whether there is a collision or not
                 """
 
+    def get_active_collisions_count(self):
+        return len(self.collisions)
+
         if len(self.collisions) <= 0:
             return False
 

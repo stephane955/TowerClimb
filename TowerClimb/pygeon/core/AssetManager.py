@@ -1,3 +1,6 @@
+from os import listdir
+from os.path import basename
+
 import pygame
 
 
@@ -89,3 +92,8 @@ class AssetManager:
         surf = pygame.Surface((width, height))
         surf.fill(color)
         self.__all_images[asset_id] = surf
+
+    def load_all_from_directory(self,base_name, path):
+        __files = [(path + file) for file in listdir(path)]
+        for i in range(len(__files)):
+            self.load_image(__files[i], base_name+"_"+str(i));

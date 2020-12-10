@@ -1,5 +1,8 @@
 # Singleton code based on (link below)
 # https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Singleton.html
+import json
+
+
 class GameObjectManager(object):
     """A class to keep track of all active GameObjects
 
@@ -76,3 +79,6 @@ class GameObjectManager(object):
             if game_object.name == name:
                 return game_object
         return None
+
+    def get_all_objects_as_data_array(self):
+        pass

@@ -1,3 +1,6 @@
+import asyncio
+import time
+
 import pygame
 
 from pygeon.core.GameManager import GameHandle
@@ -7,6 +10,8 @@ from pygeon.core.misc.GameObject import GameObject
 from pygeon.core.misc.GameObjectComponents import RendererGameObjectComponent, CollisionGameObjectComponent, \
     PhysicsGameObjectComponent, ImageAnimationGameObjectComponent
 from pygeon.core.misc.GameObjectManager import GameObjectManager
+
+from pygeon.core.networking.NetworkManager import MultiplayerManager
 
 game_handle = GameHandle("C:/Users/malte/Desktop/texture_missing.png")
 
@@ -33,7 +38,6 @@ game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/
 game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-air-attack3-loop-00.png", "f_6")
 game_handle.asset_manager.load_image("C:/Users/malte/Desktop/Individual Sprites/adventurer-air-attack3-loop-01.png", "f_7")
 
-"""
 a = GameObject(pygame.Vector2(0, 0), "a", True)
 a.add_component(RendererGameObjectComponent("a_id", 0, (1, 1), "renderer", a, True))
 b = GameObject(pygame.Vector2(150, 200), "b", True)
@@ -56,25 +60,28 @@ d = GameObject(pygame.Vector2(0, 590), "d", True)
 d.add_component(CollisionGameObjectComponent(pygame.Rect(0, 0, 800, 10), False, "coll", d, True))
 
 c.add_child(b)
-"""
 
 # --- Auch TESTS !!!
 save_mgr = GameObjectSaveManager()
-#save_mgr.save()
-save_mgr.load("C:/Users/malte/Desktop/test_save.txt")
+
+#save_mgr.load("C:/Users/malte/Desktop/test_save_1.txt")
 a = GameObjectManager().get_object_by_name("a")
 b = GameObjectManager().get_object_by_name("b")
 c = GameObjectManager().get_object_by_name("c")
 d = GameObjectManager().get_object_by_name("d")
 
+e = GameObjectManager().get_object_by_name("e")
+f = GameObjectManager().get_object_by_name("f")
 e = GameObject(pygame.Vector2(500, 300), "e", True)
-#e.add_component(RendererGameObjectComponent("b_id", 0, (1, 1), "renderer", e, True))
-e.add_component(ImageAnimationGameObjectComponent(["c_0", "c_1", "c_2", "c_3"], 4, "c_0", 0, (1, 1), "renderer", e, True))
+e.add_component(RendererGameObjectComponent("b_id", 0, (1, 1), "renderer", e, True))
+e.add_component(ImageAnimationGameObjectComponent({"test1": ["c_0", "c_1", "c_2", "c_3"], "test2": ["d_0", "d_1", "d_2", "d_3"]}, "test1", 4, "c_0", 0, (1, 1), "renderer", e, True))
 f = GameObject(pygame.Vector2(500, 500), "f", True)
-f.add_component(ImageAnimationGameObjectComponent(["d_0", "d_1", "d_2", "d_3"], 4, "d_0", 0, (1, 1), "renderer", f, True))
+#f.add_component(ImageAnimationGameObjectComponent(["d_0", "d_1", "d_2", "d_3"], 4, "d_0", 0, (1, 1), "renderer", f, True))
 
 g = GameObject(pygame.Vector2(500, 100), "g", True)
-g.add_component(ImageAnimationGameObjectComponent(["f_0", "f_1", "f_2", "f_3", "f_4", "f_5", "f_6", "f_7"], 4, "g_0", 0, (1, 1), "renderer", g, True))
+#g.add_component(ImageAnimationGameObjectComponent(["f_0", "f_1", "f_2", "f_3", "f_4", "f_5", "f_6", "f_7"], 4, "g_0", 0, (1, 1), "renderer", g, True))
+
+#save_mgr.save("C:/Users/malte/Desktop/test_save_1.txt")
 
 # --- TESTS !!!
 mode = True
@@ -85,12 +92,23 @@ cam2 = Camera(pygame.Vector2(game_handle.window_width/2, 0), "cam2", True)
 
 clock = pygame.time.Clock()
 
+# NET TESTS
+#net = MultiplayerManager()
+#net.connect()
+#net.create_lobby("guter_lobby_name", 2)
+#net.update_lobby_list()
+#
+
 while game_handle.running:
     game_handle.begin()  # Tells the game handle that the game is at the beginning of a new frame
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             game_handle.running = False
+        elif event.type == pygame.KEYDOWN:
+            key = pygame.key.get_pressed()
+            if key[pygame.K_x]:
+                e.get_component(ImageAnimationGameObjectComponent)[0].current_animation_id = "test2"
 
     game_handle.physics_update()  # Update all physics (collisions)
 
@@ -99,6 +117,7 @@ while game_handle.running:
     game_handle.clear_screen()  # Clear the screen to display changes
 
     game_handle.animations_tick()
+    #net.listen()
 
     if not mode:  # TESTS !!! (Nur die If)
         game_handle.render()  # Render all objects
