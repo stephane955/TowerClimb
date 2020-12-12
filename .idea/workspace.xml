@@ -21,8 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d4bcb5bc-17c0-4bd9-9eb8-c60fa3c42515" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/game/Player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerClimb/game/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/TowerClimb/game/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
